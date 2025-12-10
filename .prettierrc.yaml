@@ -1,0 +1,5 @@
+plugins:
+  - "/home/tenmo/.config/nvm/versions/node/v22.17.0/lib/node_modules/prettier-plugin-java/dist/index.js"
+
+tabWidth: 4
+printWidth: 100
