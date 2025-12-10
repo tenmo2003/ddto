@@ -32,7 +32,7 @@ The library works by:
 <dependency>
     <groupId>com.tenmo2003</groupId>
     <artifactId>dynamicdto</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
