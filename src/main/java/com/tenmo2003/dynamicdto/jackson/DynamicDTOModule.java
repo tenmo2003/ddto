@@ -1,9 +1,8 @@
 package com.tenmo2003.dynamicdto.jackson;
 
+import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.tenmo2003.dynamicdto.dto.abstraction.DynamicDTO;
 import com.tenmo2003.dynamicdto.registry.DynamicDTORegistry;
-
-import tools.jackson.databind.module.SimpleModule;
 
 /**
  * @author anhvn

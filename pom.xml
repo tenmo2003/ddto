@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.tenmo2003</groupId>
 	<artifactId>dynamicdto</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>dynamic-dto</name>
 	<description>Annotation and interface based serialization of POJOs with Jackson</description>
 	<url/>
@@ -38,18 +38,18 @@
             <version>1.18.42</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-core -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
         <dependency>
-            <groupId>tools.jackson.core</groupId>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>3.0.3</version>
+            <version>2.20.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
-            <groupId>tools.jackson.core</groupId>
+            <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>3.0.3</version>
+            <version>2.20.1</version>
         </dependency>
 	</dependencies>
 

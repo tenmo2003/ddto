@@ -1,14 +1,16 @@
 package com.tenmo2003.dynamicdto.jackson;
 
+import java.io.IOException;
+
+import com.fasterxml.jackson.core.JacksonException;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.tenmo2003.dynamicdto.dto.abstraction.DynamicDTO;
 import com.tenmo2003.dynamicdto.registry.DynamicDTORegistry;
 
-import tools.jackson.core.JacksonException;
-import tools.jackson.core.JsonParser;
-import tools.jackson.databind.DeserializationContext;
-import tools.jackson.databind.JsonNode;
-import tools.jackson.databind.deser.std.StdDeserializer;
-import tools.jackson.databind.node.ObjectNode;
 
 /**
  * @author anhvn
@@ -26,21 +28,21 @@ public class DynamicDTODeserializer extends StdDeserializer<DynamicDTO> {
 
     @Override
     public DynamicDTO deserialize(JsonParser p, DeserializationContext ctxt)
-        throws JacksonException {
-        JsonNode node = p.objectReadContext().readTree(p);
+        throws IOException, JacksonException {
+        JsonNode node = p.getCodec().readTree(p);
 
         JsonNode typeNode = node.get(TYPE_FIELD);
         if (typeNode == null) {
             throw new IllegalArgumentException("Missing type field");
         }
 
-        if (!typeNode.isString()) {
+        if (!typeNode.isTextual()) {
             throw new IllegalArgumentException("Type field must be a string");
         }
 
-        Class<?> clazz = classRegistry.getClass(typeNode.asString());
+        Class<?> clazz = classRegistry.getClass(typeNode.asText());
         if (clazz == null) {
-            throw new IllegalArgumentException("Unknown type: " + typeNode.asString());
+            throw new IllegalArgumentException("Unknown type: " + typeNode.asText());
         }
 
         ((ObjectNode) node).remove(TYPE_FIELD);
