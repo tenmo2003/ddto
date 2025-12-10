@@ -6,6 +6,8 @@ A Java library for annotation and interface-based serialization of POJOs with Ja
 
 DynamicDTO provides a flexible solution for serializing and deserializing Java objects where the exact type needs to be preserved and restored during JSON processing. This is particularly useful in scenarios where you need to handle polymorphic objects or when the concrete type information must be maintained across serialization boundaries.
 
+## Usage Example: [Repo](https://github.com/tenmo2003/ddto-example/tree/jackson-3.x)
+
 ## Key Features
 
 - **Dynamic Type Preservation**: Automatically includes type information in JSON output
